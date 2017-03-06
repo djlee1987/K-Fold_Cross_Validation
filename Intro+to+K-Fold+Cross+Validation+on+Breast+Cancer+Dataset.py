@@ -14,7 +14,7 @@ from sklearn.metrics import confusion_matrix
 from sklearn.metrics import accuracy_score
 from sklearn.metrics import roc_curve
 import math
-
+np.random.seed(20170306)
 get_ipython().magic('pylab inline')
 
 
@@ -127,10 +127,10 @@ print ('95 percent confidence interval for Score is %f and %f' % (lower_bound, u
 
 # ### Conclusion and Final Analysis
 # > Base Model (Single Holdout AUC)
-# + AUC Score:  0.995087719298
+# + AUC Score:  0.99649122807
 # 
 # > K-Fold Cross Validation
-# + Cross Validation Score: 0.970059 +/- 0.017827 or (0.952233, 0.987886)
+# + Cross Validation Score: 0.970059 +/- 0.018412 or (0.951668, 0.988492)
 # 
 # Clearly the AUC from the Single Holdout model quantifies are higher performance if directly with the Cross Validation Score (if those two are even directly comparable); however, the base model may suffer from overfitting indicated by suspiciously high perforance in Accuracy.  It is possible that the 20% holdout used may not be representative of the entire population and/or may not contain specialized edge cases which are critical in determining predictive performance.  By using K-Fold Cross Validation, we minimize the likelihood of this by using the entire dataset to both train and test into an aggregate average score of 0.97 +/- 0.017827
 # 
